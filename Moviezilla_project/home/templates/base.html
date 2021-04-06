@@ -5,34 +5,157 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moviezilla | {% block title %}{% endblock title %}</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 <style>
     body{
         background-color: #1a1a1a;
+        font-family: 'Lato','Arial',sans-serif;
+        font-weight: 300;
     }
+    .navbar-custom{
+      background-color: #000;
+      
+    }
+    .navbar-custom .nav-link{
+      padding: 8px 0px;
+      display: inline-block;
+      margin-left: 40px;
+    }
+    .navbar-custom .nav-link:link,
+    .navbar-custom .nav-link:visited{
+      color: #fff !important;
+      text-transform: uppercase;
+    }
+    .navbar-custom .nav-link:active,
+    .navbar-custom .nav-link:hover
+     {
+            color: #ddd !important;
+            border-bottom: #ee5253 solid 3px;
+        }
+        .custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: #ee5253 !important;
+} 
+
+.top-picks{
+  margin-bottom: 10%;
+}
+/*----------------------*/
+/*FOOTER*/
+/*----------------------*/
+
+footer{
+    background-color: #333;
+    padding: 50px;
+    font-size: 80%;
+}
+
+.footer-nav{
+    list-style: none;
+    float: left;
+
+}
+.social-links{
+    list-style: none;
+    float: right;
+}
+
+.footer-nav li,
+.social-links li{
+
+    display: inline-block;
+    margin-right:20px ;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child{
+    margin: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited
+{
+    text-decoration: none;
+    border: 0;
+    color: #888;
+    transition: color 0.2s;
+
+}
+
+.footer-nav li a:active,
+.footer-nav li a:hover
+{
+    color: #ddd;
+}
+
+
+
+
+footer p{
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+
+}
+
 </style>
+{% block style %} {% endblock style %}
+
 </head>
 <body>
       <!-- Image and text -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar sticky-top navbar-expand-lg navbar-custom">
         {% load static %}
-        <a class="navbar-brand" href="#"><img src="{% static 'home/logo-moviezilla.png' %}" alt="Moviezilla Logo" width="45" height="25"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#"><img src="{% static 'home/logo-moviezilla.png' %}" alt="Moviezilla Logo" width="70" height="55"></a>
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="padding-left: 40%;">
           <div class="navbar-nav">
             <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-link" href="#">Features</a>
-            <a class="nav-link" href="#">Pricing</a>
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <a class="nav-link" href="#" >Features</a>
+            <a class="nav-link" href="#" >Login</a>
+            <a class="nav-link" href="#" >Sign Up</a>
+
           </div>
         </div>
       </nav>
 
       {% block body%} {% endblock body %}
 </body>
+<footer>
+  <div class="row">
+      <div class="col-sm-6">
+          <ul class="footer-nav">
+              <li><a href="aboutUs.php">About us</a></li>
+              <li><a href="categ.php">Get Recommendations</a></li>
+              <li><a href="signup.php">Register now</a></li>
+              <li><a href="#">Login</a></li>
+  
 
+          </ul>
+      </div>
+     
+  </div>
+  <div class="row">
+      <p style="padding-left: 40%;">
+          Copyright &copy; 2020 Moviezilla. All rights reserved.
+      </p>
+  </div>
+</footer>
+
+
+</html>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

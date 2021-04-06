@@ -4,7 +4,204 @@
     Home
 {% endblock title %}
 
+{% block style %} 
+{% load static %}
+
+<style>
+    .business-header {
+    height: 550px;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url("{% static 'home/header.jpg' %}");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: center;
+    -o-background-size: cover;
+}
+.tagline{
+  color: #fff;
+  font-family: 'Ranchers', cursive;
+  font-size: 350%;
+}
+.subtag{
+  color: #fff;
+  font-weight: 300;
+  /* text-transform: uppercase; */
+}
+.button-all{
+  background-color: #ee5253;
+  color: #fff;
+}
+.button-all:hover{
+  background-color: #d63031;
+  color: #fff;
+}
+
+.button-ghost:link,
+.button-ghost:visited {
+    border: 1px solid #ee5253;
+    color: #ee5253 !important;
+}
+
+.button-ghost:hover,
+.button-ghost:active {
+    border: 1px solid #d63031;
+    color: #fff !important;
+}
+.button-all,
+.button-ghost{
+  border-radius: 50px;
+  width: 150px;
+}
+
+/* HEADINGS */
+
+h1,h2,h3{
+    
+   
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+h1{
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 250%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+
+
+}
+
+h2{
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+
+}
+
+h3{
+    font-size: 110%;
+    margin-bottom: 15px;
+
+}
+
+h2:after{
+    display: block;
+    height: 2px;
+    background-color:#ee5253;
+    content: "";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+
+}
+.heading{
+  margin-top: 10%;
+}
+p{
+  color: #fff;
+}
+.features{
+  margin-top: 5%;
+}
+.top-picks .card{
+  box-shadow: 0 4px 8px 0 rgba(105,105,105, 0.2), 0 6px 20px 0 rgba(105,105,105, 0.19);
+
+}
+
+</style>
+
+{% endblock style %}
+
+
 {% block body %}
+<header class="business-header">
+  <div class="container">
+      <div class="row ">
+          <div class="col-lg-12  text-center">
+              <br><br><br><br><br><br>
+              <h1 class="tagline">Welcome to Moviezilla!</h1>
+              <div class="subtag">
+                <p> Sub Tagline </p>
 
+              </div>
+              <br>
+              <a class="btn button-all btn-md" href="#" style="margin-right: 3.5%;">Sign Up</a> <a class="btn btn-outline-danger button-ghost btn-md" href="#">Recommend</a>
+          </div>
+      </div>
+  </div>
+</header>
 
+<section class="features">
+<div class="container">
+  <div class="row heading" style="margin-left: 12%;">
+  <h2>Get All your movie recommendations at one place.</h2>  
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Get Movies for every Genre</h3>
+                <p>
+                    Never waste time again! We work towards saving your time and money on groceries and everyday purchases.
+
+                </p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Get Movies for every Genre</h3>
+                <p>
+                    Never waste time again! We work towards saving your time and money on groceries and everyday purchases.
+
+                </p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Get Movies for every Genre</h3>
+                <p>
+                    Never waste time again! We work towards saving your time and money on groceries and everyday purchases.
+
+                </p>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<section class="top-picks">
+<div class="container">
+  <div class="row heading" style="margin-left: 40%;">
+    <h2>Our Top Picks</h2>  
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card " style="width: 18rem;background-color: black;">
+      {% load static %}
+        <img class="card-img-top" src="{% static 'home/poster1.jpg' %}" alt="Card image cap" height="300px">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;background-color: black;">
+      {% load static %}
+        <img class="card-img-top" src="{% static 'home/poster2.jpg' %}" alt="Card image cap" height="300px">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem; background-color: black;">
+      {% load static %}
+        <img class="card-img-top" src="{% static 'home/poster3.jpg' %}" alt="Card image cap" height="300px">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
   {% endblock body %}

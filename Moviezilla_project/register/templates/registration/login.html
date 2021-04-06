@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login Here
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block body %}
+
+{% load static %}
+<head>
+  <style>
+   body{
+     background: url(../static/register/login_bg.png)50% no-repeat fixed;
+    }
+   label{
+     color: white;
+   }
+   
+  </style>
+</head>
+<body><br><br><br><br><br>
+  <div class="container">
+    <div class="d-flex justify-content-center h-100 ">
+      <div class="card card-block d-table-cell align-middle" style="background-color: #1a1a1a; opacity: 0.9; border-radius: 25px; padding: 15px;">
+        <div class="card-body" style="width: 350px;">
+          <form><br>
+            <label>Email:</label>
+            <div class="input-group form-group">
+              <input type="text" class="form-control" style="background-color: #9E9E9E; border: transparent; border-radius: 18px;">
+            </div>
+            <label>Password:</label>
+            <div class="input-group form-group">
+              <input type="password" class="form-control" style="background-color: #9E9E9E;border: transparent; border-radius: 18px;">
+            </div>
+            <br>
+            <div class="d-flex justify-content-center links" style="color: white; font-size: x-small;">
+              Don't have an account? &nbsp;<a href="#"> Sign Up</a>
+            </div><br>
+            <center>
+            <div class="form-group">
+              <input type="submit" value="LOGIN" class="btn" style=" color: white; background-color: #EE5253; border-radius: 18px; width: 125px; height: 40px;">
+            </div>
+            </center>
+          </form>
+        </div>
+      </div >
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock body %}

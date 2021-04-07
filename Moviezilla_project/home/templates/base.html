@@ -125,11 +125,13 @@ footer p{
             <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
             <a class="nav-link" href="#" >Features</a>
             {% if user.is_authenticated %}
+            <a class="nav-link" href="{% url 'dashb' %}" >Dashboard</a>
             <a href="#" onclick="$('#signOutBtn').click()" class="nav-link">Logout</a>
                     <form style='display: none;' method="POST" action="{% url 'logoutuser' %}">
                         {% csrf_token %}
                         <button id="signOutBtn" type="submit">Logout</button>
                     </form>
+           
             {% else %}
             <a class="nav-link" href="{% url 'loginuser' %}" >Login</a>
             <a class="nav-link" href="{% url 'signupuser' %}" >Sign Up</a>

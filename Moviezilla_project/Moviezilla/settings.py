@@ -138,6 +138,7 @@ MEDIA_ROOT= BASE_DIR / 'media'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_URL='login'
-LOGOUT_URL='logout'
+LOGIN_URL='/login'
+LOGOUT_URL='/logout'
+
 

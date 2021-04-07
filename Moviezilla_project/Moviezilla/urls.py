@@ -3,14 +3,16 @@ from django.urls import path,include
 
 from django.conf.urls.static import static
 from django.conf import settings
-from . import views
+from home import views
 from register import views as v
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.homepage,name='home'),
-    path("register/", v.register, name="register"),
-    path('', include("django.contrib.auth.urls")),
+    path("signup/", v.signupuser, name="signupuser"),
+    # path('', include("django.contrib.auth.urls")),
+    path('logout/', v.logoutuser,name='logoutuser'),
+    path('login/', v.loginuser,name='loginuser'),
     
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 

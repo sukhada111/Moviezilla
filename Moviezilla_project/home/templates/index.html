@@ -137,7 +137,14 @@ p{
 
 <section class="features">
 <div class="container">
+  <h2 class="text-center">
+    {% if user.is_authenticated %}
+    Welcome {{ user.username }}
+    
+  {% endif %} 
+  </h2>
   <div class="row heading" style="margin-left: 12%;">
+
   <h2>Get All your movie recommendations at one place.</h2>  
   </div>
   <div class="row">

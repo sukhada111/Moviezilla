@@ -12,19 +12,94 @@ Login Here
 <head>
   <style>
    body{
-     background: url(../static/register/login_bg.png)50% no-repeat fixed;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url("{% static 'register/login_bg.png' %}");
     }
    label{
      color: white;
    }
+  input[type=submit]{
+  background-color: #ee5253 !important;
+  color: #fff;
+}
+input[type=submit]:hover,
+input[type=submit]:active{
+  background-color: #d63031  !important;
+  color: #fff;
+}
+.link-sign:link,
+.link-sign:visited{
+  color: #ee5253;
+}
+.link-sign:active,
+.link-sign:hover{
+  color: #d63031;
+  text-decoration: underline;
+}
+/* HEADINGS */
+
+h1,h2,h3{
+    
    
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+h1{
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 250%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+
+
+}
+
+h2{
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+
+}
+
+h3{
+    font-size: 110%;
+    margin-bottom: 15px;
+
+}
+
+h2:after{
+    display: block;
+    height: 2px;
+    background-color:#ee5253;
+    content: "";
+    width: 80px;
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 2%;
+
+
+}
+.heading{
+  margin-left: 45%;
+}
+.form-control{
+  background-color: #9E9E9E;
+   border: transparent; 
+   border-radius: 18px;
+}
   </style>
 </head>
-<body><br><br><br><br><br>
+<body><br><br><br>
   
 
 
   <div class="container">
+      <h2>Login</h2>  
+
     {% if error %}
     <div class="alert alert-danger" role="alert">
         {{ error }}
@@ -39,22 +114,22 @@ Login Here
             <br>
             <label>Username:</label>
             <div class="input-group form-group">
-              <input type="text" name="username" class="form-control" style="background-color: #9E9E9E; border: transparent; border-radius: 18px;">
+              <input type="text" name="username" class="form-control" >
             </div>
             <label>Password:</label>
             <div class="input-group form-group">
-              <input type="password" name="password" class="form-control" style="background-color: #9E9E9E;border: transparent; border-radius: 18px;">
+              <input type="password" name="password" class="form-control" >
             </div>
             <br>
             
             <center>
             <div class="form-group">
-              <input type="submit" name="submit" value="LOGIN" class="btn" style=" color: white; background-color: #EE5253; border-radius: 18px; width: 125px; height: 40px;">
+              <input type="submit" name="submit" value="LOGIN" class="btn button-all" style=" color: white; background-color: #EE5253; border-radius: 50px; width: 125px; height: 37px;">
             </div>
             </center>
 
             <div class="d-flex justify-content-center links" style="color: white; font-size: small;">
-              Don't have an account? &nbsp;<a href="{% url 'signupuser' %}"> Sign Up</a>
+              Don't have an account? &nbsp;<a href="{% url 'signupuser' %}" class="link-sign"> Sign Up</a>
             </div><br>
 
           </form>

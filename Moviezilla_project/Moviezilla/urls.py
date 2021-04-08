@@ -6,6 +6,7 @@ from django.conf import settings
 from home import views
 from register import views as v
 from recommend import views as vr
+from userprofile import views as vu
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -15,6 +16,7 @@ urlpatterns = [
     path('logout/', v.logoutuser,name='logoutuser'),
     path('login/', v.loginuser,name='loginuser'),
     path('dashboard/', vr.dashb,name='dashb'),
+    path('userprofile/', vu.userprofile,name='userprofile'),
 
     
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

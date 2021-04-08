@@ -146,12 +146,13 @@ p{
 
 <section class="features">
 <div class="container">
-  <h2 class="text-center">
+  
     {% if user.is_authenticated %}
+    <h2 class="text-center"></h2>
     Welcome {{ user.username }}
-    
-  {% endif %} 
   </h2>
+  {% endif %} 
+ 
   <div class="row heading" style="margin-left: 12%;">
 
   <h2>Get All your movie recommendations at one place.</h2>  
@@ -195,7 +196,7 @@ p{
       {% load static %}
         <img class="card-img-top" src="{% static 'home/poster1.jpg' %}" alt="Card image cap" height="300px">
         <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">Avengers: Endgame</p>
         </div>
       </div>
     </div>
@@ -204,7 +205,7 @@ p{
       {% load static %}
         <img class="card-img-top" src="{% static 'home/poster2.jpg' %}" alt="Card image cap" height="300px">
         <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">Aladdin</p>
         </div>
       </div>
     </div>
@@ -213,7 +214,7 @@ p{
       {% load static %}
         <img class="card-img-top" src="{% static 'home/poster3.jpg' %}" alt="Card image cap" height="300px">
         <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">Tangled</p>
         </div>
       </div>
     </div>

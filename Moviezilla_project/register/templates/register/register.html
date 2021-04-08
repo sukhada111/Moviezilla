@@ -109,9 +109,9 @@ h2:after{
 </head>
 
 <body>
-    <br><br><br><br><br>
+    <br><br>
     <div class="container">
-
+      <h2>Sign Up</h2>  
 {% if error %}
 <div class="alert alert-danger" role="alert">
     {{ error }}
@@ -123,6 +123,7 @@ h2:after{
 
     <form method="POST" class="form-group myForm">
 	    {% csrf_token %}
+     
         <div class="form-group">
             <label for="username">Username</label>
             <input type="text" name="username" class="form-control" id="username" aria-describedby="usernameHelp">
@@ -143,17 +144,32 @@ h2:after{
       <label for="">Your favourite Genres</label>
       <div class="form-check">
         <label class="form-check-label" for="check1">
-          <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something">Drama
+          <input type="checkbox" class="form-check-input" id="check1" name="drama" value="drama">Drama
         </label>
       </div>
       <div class="form-check">
         <label class="form-check-label" for="check2">
-          <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">Comedy
+          <input type="checkbox" class="form-check-input" id="check2" name="thriller" value="thriller">Thriller
         </label>
       </div>
       <div class="form-check">
         <label class="form-check-label">
-          <input type="checkbox" class="form-check-input">Romance
+          <input type="checkbox" class="form-check-input" id="check3" name="action" value="action">Action
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" id="check4" name="comedy" value="comedy">Comedy
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" id="check5" name="romance" value="romance">Romance
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" id="check6" name="adventure" value="adventure">Adventure
         </label>
       </div>
         <button type="submit" class="btn button-all" style="margin-left: 32%;margin-top: 7%;">Sign Up</button>

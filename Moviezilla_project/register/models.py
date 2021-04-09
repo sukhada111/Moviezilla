@@ -4,23 +4,14 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
-# Create your models here.
-# class Profile(models.Model):
-#     user=models.OneToOneField(
-#         User,
-#         on_delete=models.CASCADE,
-#         primary_key=True,
-#     )
+#Create your models here.
+# class Genre(models.Model):
+#     user=models.ForeignKey(User,on_delete=models.CASCADE)
 #     email=models.EmailField(max_length=150)
-#     drama=models.BooleanField(default=False)
-#     thriller=models.BooleanField(default=False)
-#     action=models.BooleanField(default=False)
-#     comedy=models.BooleanField(default=False)
-#     romance=models.BooleanField(default=False)
-#     adventure=models.BooleanField(default=False)
+#     drama=models.BooleanField(default=False,null=True)
+#     thriller=models.BooleanField(default=False,null=True)
+#     action=models.BooleanField(default=False,null=True)
+#     comedy=models.BooleanField(default=False,null=True)
+#     romance=models.BooleanField(default=False,null=True)
+#     adventure=models.BooleanField(default=False,null=True)
 
-# @receiver(post_save, sender=User)
-# def update_profile_signal(sender, instance, created, **kwargs):
-#     if created:
-#         Profile.objects.create(username=instance)
-#     instance.profile.save()

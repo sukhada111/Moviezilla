@@ -17,10 +17,10 @@
 # 	    fields = ("username", "email", "password1", "password2","drama","thriller","action","comedy","romance","adventure")
         
 
-# from django.forms import ModelForm
-# from .models import Genre
+from django.forms import ModelForm
+from .models import Genre
 
-# class GenreForm(ModelForm):
-#     class Meta:
-#         model=Genre
-#         fields=['email','drama','thriller','action','comedy','romance','adventure']
+class GenreForm(ModelForm):
+    class Meta:
+        model=Genre
+        fields=['email','drama','thriller','action','comedy','romance','adventure']

@@ -142,7 +142,7 @@ p{
 }
 
 .genre{
-    padding-left: 520px;
+    padding-left: 390px;
 }
 
 
@@ -151,13 +151,35 @@ p{
 <body>
 
 <section class="genres">
-    <div class="row-heading" style="padding-top: 80px;">
+    <div class="row-heading" style="padding-top: 60px;">
+      <h2>Hello {{gen.user}}</h2><br>
         <h2>Your preferred genres</h2> 
     </div> 
+    <br>
     <div class="genre">
-        <a href="#" class="square_btn">Animated</a>
-        <a href="#" class="square_btn">Science Fiction</a>
+      {% if gen.drama %}
+        <a href="#" class="square_btn">Drama</a>
+        {% endif %}
+
+        {% if gen.thriller %}
+        <a href="#" class="square_btn">Thriller</a>
+        {% endif %}
+
+        {% if gen.action %}
+        <a href="#" class="square_btn">Action</a>
+        {% endif %}
+
+        {% if gen.comedy %}
         <a href="#" class="square_btn">Comedy</a>
+        {% endif %}
+
+        {% if gen.adventure %}
+        <a href="#" class="square_btn">Adventure</a>
+        {% endif %}
+        {% if gen.romance %}
+        <a href="#" class="square_btn">Romance</a>
+        {% endif %}
+
     </div>
 </section>
     
@@ -166,7 +188,7 @@ p{
 <section class="wishlist">
     <div class="container">
         <div class="row-heading" >
-          <h2>Wishlist</h2>  <br>
+          <h2>My Wishlist</h2>  <br>
         </div>
       
         <div class="row" style="margin-left: 50px;">

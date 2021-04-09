@@ -111,7 +111,8 @@ h2:after{
 <body>
     <br><br>
     <div class="container">
-      <h2>Sign Up</h2>  
+      <h2>We're almost done, select your favourite genres to get a more customized experience!
+      </h2>  
 {% if error %}
 <div class="alert alert-danger" role="alert">
     {{ error }}
@@ -125,20 +126,41 @@ h2:after{
 	    {% csrf_token %}
      
         <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" name="username" class="form-control" id="username" aria-describedby="usernameHelp">
-            <small id="usernameHelp" class="form-text text-muted">Your username must be unique. We'll let you know if someone has taken it already.</small>
-        </div>
-        <div class="form-group">
-            <label for="password1">Password</label>
-            <input type="password" name="password1" class="form-control" id="password1">
-        </div>
-        <div class="form-group">
-            <label for="password2">Confirm Password</label>
-            <input type="password" name="password2" class="form-control" id="password2">
-        </div>
-        
-        <button type="submit" class="btn button-all" style="margin-left: 32%;margin-top: 7%;">Sign Up</button>
+          <label for="email">Email ID</label>
+          <input type="email" name="email" class="form-control" id="email">
+      </div>
+      <label for="">Your favourite Genres</label>
+      <div class="form-check">
+        <label class="form-check-label" for="check1">
+          <input type="checkbox" class="form-check-input" id="check1" name="drama">Drama
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label" for="check2">
+          <input type="checkbox" class="form-check-input" id="check2" name="thriller">Thriller
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" id="check3" name="action">Action
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" id="check4" name="comedy">Comedy
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" id="check5" name="romance">Romance
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" id="check6" name="adventure">Adventure
+        </label>
+      </div>
+        <button type="submit" class="btn button-all" style="margin-left: 32%;margin-top: 7%;">Submit</button>
     </form>
     <hr>
     <div class="text-center" style="color: white; font-size: small;">

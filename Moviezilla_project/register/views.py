@@ -23,6 +23,9 @@ from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
 # from .forms import RegisterForm
 
+from .forms import GenreForm
+from .models import Genre
+
 
 def signupuser(request):
     if request.method=='GET':
@@ -39,7 +42,7 @@ def signupuser(request):
                             user.save()
                           
                             login(request,user)
-                            return redirect('home')
+                            return redirect('selectgenre')
                         except IntegrityError:
                             return render(request,'register/register.html',{'form':UserCreationForm(),'error':'This username is already taken. Please choose a different username'})
         else:
@@ -63,17 +66,17 @@ def logoutuser(request):
         logout(request)
         return redirect('home')
 
-# @login_required
-# def selectgenre(request):
-#     if request.method=='GET':
-#           return render(request,'register/genre.html',{'form':TodoForm()})
-#     else:
-#         try:
-#             form=TodoForm(request.POST)
-#             newtodo=form.save(commit=False)
-#             newtodo.user=request.user
-#             newtodo.save()
-#             return redirect('currenttodos')
-#         except ValueError:
-#              return render(request,'todo/createtodo.html',{'form':TodoForm(),'error':'bad data passed in'})
+@login_required
+def selectgenre(request):
+    if request.method=='GET':
+          return render(request,'register/genre.html',{'form':GenreForm()})
+    else:
+        try:
+            form=GenreForm(request.POST)
+            genre=form.save(commit=False)
+            genre.user=request.user
+            genre.save()
+            return redirect('home')
+        except ValueError:
+             return render(request,'register/genre.html',{'form':GenreForm(),'error':'Enter details appropriately!'})
 

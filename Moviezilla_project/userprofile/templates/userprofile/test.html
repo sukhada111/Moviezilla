@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+
+{% block title %} UserProfile {% endblock %}
+<!-- {% load crispy_forms_tags %} -->
+
+{% block body %}
+
+{% load static %}
+<style>
+    .business-header {
+    height: 550px;
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url("{% static 'home/header.jpg' %}");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: center;
+    -o-background-size: cover;
+}
+.tagline{
+  color: #fff;
+  font-family: 'Ranchers', cursive;
+  font-size: 350%;
+}
+.subtag{
+  color: #fff;
+  font-weight: 300;
+  /* text-transform: uppercase; */
+}
+.button-all{
+  background-color: #ee5253;
+  color: #fff;
+}
+.button-all:hover{
+  background-color: #d63031;
+  color: #fff;
+}
+
+.button-ghost:link,
+.button-ghost:visited {
+    border: 1px solid #ee5253;
+    color: #ee5253 !important;
+}
+
+.button-ghost:hover,
+.button-ghost:active {
+    border: 1px solid #d63031;
+    color: #fff !important;
+}
+.button-all,
+.button-ghost{
+  border-radius: 50px;
+  width: 150px;
+}
+
+/* HEADINGS */
+
+h1,h2,h3{
+    
+   
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+h1{
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 250%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+
+
+}
+
+h2{
+    font-size: 150%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+
+}
+
+h3{
+    font-size: 110%;
+    margin-bottom: 15px;
+
+}
+
+h2:after{
+    display: block;
+    height: 2px;
+    background-color:#ee5253;
+    content: "";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+
+}
+.heading{
+  margin-top: 10%;
+}
+p{
+  color: #fff;
+}
+.features{
+  margin-top: 5%;
+}
+.wishlist .card{
+  box-shadow: 0 4px 8px 0 rgba(105,105,105, 0.2), 0 6px 20px 0 rgba(105,105,105, 0.19);
+  
+}
+.wishlist .card:hover {
+    transform: scale(1.03);
+}
+
+.card-text{
+    text-align: center;
+}
+
+
+.row{
+    align-content: center;
+}
+
+.square_btn{
+    display: inline-block;
+    padding: 13px 20px;
+	border-radius: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: #FFF;
+    background-image: -webkit-linear-gradient(45deg, #e64732 0%, #ff6b6b 100%);
+    background-image: linear-gradient(45deg, #e64732 0%, #ff6b6b 100%);
+    transition: .4s;
+}
+
+.square_btn:hover {
+    background-image: -webkit-linear-gradient(45deg, #e64732 0%, #ff6b6b 100%);
+    background-image: linear-gradient(45deg, #e64732 0%, #ff6b6b 100%);
+}
+
+.genre{
+    padding-left: 520px;
+}
+
+
+</style>
+
+<body>
+
+<section class="genres">
+    <div class="row-heading" style="padding-top: 80px;">
+        <h2>Your preferred genres</h2> 
+    </div> 
+    <div class="genre">
+        <a href="#" class="square_btn">Animated</a>
+        <a href="#" class="square_btn">Science Fiction</a>
+        <a href="#" class="square_btn">Comedy</a>
+    </div>
+</section>
+    
+
+<br><br><br>
+<section class="wishlist">
+    <div class="container">
+        <div class="row-heading" >
+          <h2>Wishlist</h2>  <br>
+        </div>
+      
+        <div class="row" style="margin-left: 50px;">
+          <div class="col-sm-4">
+            <div class="card " style="width: 15rem;background-color: #f04d30;">
+            {% load static %}
+              <img class="card-img-top" src="{% static 'userprofile/coco.jpg' %}" alt="Card image cap" height="200px">
+              <div class="card-body">
+                <p class="card-text">Coco</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card" style="width: 15rem;background-color: #e8a215;">
+            {% load static %}
+              <img class="card-img-top" src="{% static 'userprofile/ratatouille.jpg' %}" alt="Card image cap" height="200px">
+              <div class="card-body">
+                <p class="card-text">Ratatouille</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card" style="width: 15rem; background-color: #20c972;">
+            {% load static %}
+              <img class="card-img-top" src="{% static 'userprofile/tgd.jpg' %}" alt="Card image cap" height="200px">
+              <div class="card-body">
+                <p class="card-text">The Good Dinosaur</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</body>
+
+{% endblock body%}

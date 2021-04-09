@@ -135,6 +135,9 @@ p{
 .top-picks .card:hover {
     transform: scale(1.03);
 }
+.top-picks .card{
+  margin-bottom: 40px;
+}
 
 </style>
 
@@ -194,6 +197,7 @@ p{
   </div>
 
   <div class="row">
+    {% if gen.action %}
     <div class="col-sm-4">
       <div class="card " style="width: 18rem;background-color: black;">
       {% load static %}
@@ -203,7 +207,9 @@ p{
         </div>
       </div>
     </div>
+    {% endif %}
    
+    {% if gen.romance %}
     <div class="col-sm-4">
       <div class="card" style="width: 18rem; background-color: black;">
       {% load static %}
@@ -213,16 +219,52 @@ p{
         </div>
       </div>
     </div>
-
+    {% endif %}
+   
+    {% if gen.adventure %}
     <div class="col-sm-4">
         <div class="card" style="width: 18rem;background-color: black;">
         {% load static %}
-          <img class="card-img-top" src="{% static 'recommend/frozen.jpg' %}" alt="Card image cap" height="300px">
+          <img class="card-img-top" src="{% static 'recommend/mi5.jpg' %}" alt="Card image cap" height="300px">
           <div class="card-body">
-            <p class="card-text">Frozen</p>
+            <p class="card-text">Mission Impossible 5</p>
           </div>
         </div>
       </div>
+      {% endif %}
+      {% if gen.thriller %}
+      <div class="col-sm-4">
+        <div class="card" style="width: 18rem;background-color: black;">
+        {% load static %}
+          <img class="card-img-top" src="{% static 'recommend/gone.jpg' %}" alt="Card image cap" height="300px">
+          <div class="card-body">
+            <p class="card-text">Gone Girl</p>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% if gen.comedy %}
+      <div class="col-sm-4">
+        <div class="card" style="width: 18rem;background-color: black;">
+        {% load static %}
+          <img class="card-img-top" src="{% static 'recommend/home.jpg' %}" alt="Card image cap" height="300px">
+          <div class="card-body">
+            <p class="card-text">Home Alone 2</p>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% if gen.drama %}
+      <div class="col-sm-4">
+        <div class="card" style="width: 18rem;background-color: black;">
+        {% load static %}
+          <img class="card-img-top" src="{% static 'recommend/incep.jpg' %}" alt="Card image cap" height="300px">
+          <div class="card-body">
+            <p class="card-text">Inception</p>
+          </div>
+        </div>
+      </div>
+      {% endif %}
 
   </div>
 </div>
@@ -257,9 +299,9 @@ p{
         <div class="col-sm-4">
             <div class="card" style="width: 18rem;background-color: black;">
             {% load static %}
-              <img class="card-img-top" src="{% static 'recommend/mi5.jpg' %}" alt="Card image cap" height="300px">
+              <img class="card-img-top" src="{% static 'recommend/frozen.jpg' %}" alt="Card image cap" height="300px">
               <div class="card-body">
-                <p class="card-text">Mission Impossible 5</p>
+                <p class="card-text">Frozen</p>
               </div>
             </div>
           </div>

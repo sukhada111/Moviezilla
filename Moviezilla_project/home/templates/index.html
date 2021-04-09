@@ -148,9 +148,8 @@ p{
 <div class="container">
   
     {% if user.is_authenticated %}
-    <h2 class="text-center"></h2>
-    Welcome {{ user.username }}
-  </h2>
+    <h2 class="text-center">Welcome {{ user.username }}</h2>
+    
   {% endif %} 
  
   <div class="row heading" style="margin-left: 12%;">

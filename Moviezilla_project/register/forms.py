@@ -1,6 +1,6 @@
-from django import forms
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.forms import User
+# from django import forms
+# from django.contrib.auth.forms import UserCreationForm
+# from django.contrib.auth.forms import User
 
 
 # class RegisterForm(UserCreationForm):
@@ -14,5 +14,13 @@ from django.contrib.auth.forms import User
 
 #     class Meta:
 # 	    model = User
-# 	    fields = ["username", "email", "password1", "password2","drama","thriller","action","comedy","romance","adventure"]
+# 	    fields = ("username", "email", "password1", "password2","drama","thriller","action","comedy","romance","adventure")
         
+
+from django.forms import ModelForm
+from .models import Genre
+
+class GenreForm(ModelForm):
+    class Meta:
+        model=Genre
+        fields=['email','drama','thriller','action','comedy','romance','adventure']

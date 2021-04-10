@@ -187,6 +187,17 @@ p{
 
     </form>
 </div>
+
+<div class="container">
+  {% for film_recom in film_data %}
+  <div class="row">
+   
+    <h4 style="color: #fff;">{{ film_recom.title }}</h4>
+   
+    </div>
+    {% endfor %}
+  </div>
+</div>
   
 </section>
 

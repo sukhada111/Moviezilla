@@ -121,16 +121,17 @@ footer p{
         <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="padding-left: 40%;">
-          <div class="navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+          <div class="navbar-nav ml-auto">
             <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
             <a class="nav-link" href="#" >Features</a>
             {% if user.is_authenticated %}
             <a class="nav-link" href="{% url 'dashb' %}" >Dashboard</a>
-            <a class="nav-link" href="{% url 'userprofile' %}">Profile</a>
+            <a class="nav-link" href="{% url 'userprofile' %}">My Profile</a>
             <a href="#" onclick="$('#signOutBtn').click()" class="nav-link">Logout</a>
                     <form style='display: none;' method="POST" action="{% url 'logoutuser' %}">
                         {% csrf_token %}
+                        
                         <button id="signOutBtn" type="submit">Logout</button>
                     </form>
            

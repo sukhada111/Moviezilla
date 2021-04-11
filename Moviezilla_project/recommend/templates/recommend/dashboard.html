@@ -181,23 +181,30 @@ p{
   <div style="margin-right: 33px;">
       <br>
   <form method="POST">
+    {% csrf_token %}
     <div class="input-group form-group" style="margin-left: 30%;">
         <input type="text" name="movie" class="form-control textt" placeholder="Enter movie name..">
+       
       </div>
-
+      <br><br>
+        <button type="submit" class="btn button-all btn-md" style="margin-left: 47%;">Submit</button>
     </form>
 </div>
 
 <div class="container">
-  {% for film_recom in film_data %}
-  <div class="row">
-   
-    <h4 style="color: #fff;">{{ film_recom.title }}</h4>
-   
+  {% if film_data %}
+    {% for film_recom in film_data %}
+    <div class="row">
+    
+      <h4 style="color: #fff;">{{ film_recom.title }}</h4>
+    
+      </div>
+      {% endfor %}
+      {% else %}
+      <h4 style="color: #fff;">{{ error }}</h4>
+      {% endif %}
     </div>
-    {% endfor %}
   </div>
-</div>
   
 </section>
 

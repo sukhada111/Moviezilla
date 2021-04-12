@@ -11,9 +11,11 @@ import pandas as pd
 import ast
 import pickle
 
-movie=pd.read_csv('C:/Users/sukha/Documents/Moviezilla/Moviezilla_project/recommend/static/recommend/movies.csv')
-credits=pd.read_csv('C:/Users/sukha/Documents/Moviezilla/Moviezilla_project/recommend/static/recommend/credits.csv')
+movie=pd.read_csv('C:/Users/RHUTUJA THAKUR/Django/Moviezilla/Moviezilla_project/recommend/static/recommend/movies.csv')
+credits=pd.read_csv('C:/Users/RHUTUJA THAKUR/Django/Moviezilla/Moviezilla_project/recommend/static/recommend/credits.csv')
 
+# movie=pd.read_csv('C:/Users/sukha/Documents/Moviezilla/Moviezilla_project/recommend/static/recommend/movies.csv')
+# credits=pd.read_csv('C:/Users/sukha/Documents/Moviezilla/Moviezilla_project/recommend/static/recommend/credits.csv')
 #merging datasets
 final=pd.merge(movie,credits,left_on='id',right_on='movie_id')[['id','original_title','genres','keywords','overview','cast','crew']]
 
@@ -175,5 +177,4 @@ def dashb(request):
             return render(request,'recommend/dashboard.html',{'film_data': film_data,'gen':genres})
         else:
             return render(request,'recommend/dashboard.html',{'error': 'No movies found.','gen':genres})
-
 

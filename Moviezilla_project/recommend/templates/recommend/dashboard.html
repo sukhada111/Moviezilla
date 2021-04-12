@@ -138,6 +138,11 @@ p{
 .top-picks .card{
   margin-bottom: 40px;
 }
+.rec .card:hover{
+
+    transform: scale(1.03);
+}
+ 
 
 </style>
 
@@ -152,12 +157,12 @@ p{
               <br><br><br><br><br><br>
               <h1 class="tagline">Welcome to Moviezilla!</h1>
               <div class="subtag">
-                <p> Sub Tagline </p>
+                <p style="font-size: 150%;"> We recommend, while you sit back and enjoy 🥤🍿</p>
 
               </div>
               <br>
               <a class="btn button-all btn-md" href="#trending" style="margin-right: 3.5%;">Trending movies</a>
-               <a class="btn btn-outline-danger button-ghost btn-md" href="#">Know more</a>
+               <a class="btn btn-outline-danger button-ghost btn-md" href="{% url 'aboutUs' %}">Know more</a>
           </div>
       </div>
   </div>
@@ -191,22 +196,34 @@ p{
     </form>
 </div>
 
-<div class="container" style="margin-left: 5%;">
+<div class="container  rec" style="margin-left: 4%;">
+  <br><br>
+  {% if film_data %}
+  <h2>Movies recommended for you</h2><br>
+  {% endif %}
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+ 
   {% if film_data %}
     {% for film_recom in film_data %}
     <div class="row" >
     
       <!-- <h4 style="color: #fff;"></h4> -->
       <div class="col">
-        <div class="card shadow-sm" style="width: 18rem; height:34rem;background-color: black; margin-top: 5%;">
+        <div class="card" style="width: 18rem; height:35rem;background-color: black; margin-top: 5%; margin-bottom: 40px;box-shadow: 0 4px 8px 0 rgba(105,105,105, 0.2), 0 6px 20px 0 rgba(105,105,105, 0.19);">
           <img src=" https://image.tmdb.org/t/p/w185/{{ film_recom.poster_path }}" alt="" class="card-img-top" height="300px">
           <div class="card-body">
             <h6 style="color: #fff;">{{ film_recom.title }}</h6>
             <p class="card-text" style="margin-bottom: 3%;"><em>{{ film_recom.tagline }}</em></p><br>
             <p style="color: #fff;" class="card-text"><img src="{%static 'recommend/favourite.png' %}" alt="" height="15px" width="15px">: <span style="color: #ee5253;">{{ film_recom.vote_average }}</span></p>
             <p class="card-text" style="color: #fff;"><strong>Genre: </strong><span style="color: #ee5253; text-decoration: underline;">{{ film_recom.genre }}</span></p>
-
+            
+            <a href="#" onclick="$('#OutBtn').click()" class="nav-link">Wishlist</a>
+            <form style='display: none;' method="POST" action="{% url 'wishlist' %}">
+                {% csrf_token %}
+                <input type="text" name="movie_name" value="{{ film_recom.title }}">
+                
+                <button id="OutBtn" type="submit">Wishlist</button>
+            </form>
           </div>
         </div>
       </div>

@@ -21,6 +21,7 @@ urlpatterns = [
     path('dashboard/', vr.dashb,name='dashb'),
     path('userprofile/', vu.userprofile,name='userprofile'),
     path('aboutUs/',views.aboutUs,name='aboutUs'),
+    path('wishlist/', vr.wishlist,name='wishlist'),
 
 
     

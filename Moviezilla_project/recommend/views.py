@@ -4,15 +4,19 @@ from django.shortcuts import render,redirect,get_object_or_404
 from register.models import Genre
 from django.contrib.auth.decorators import login_required
 import requests
+from .forms import WishlistForm
 
 
 import numpy as np
 import pandas as pd
 import ast
 import pickle
+import os
 
-movie=pd.read_csv('C:/Users/RHUTUJA THAKUR/Django/Moviezilla/Moviezilla_project/recommend/static/recommend/movies.csv')
-credits=pd.read_csv('C:/Users/RHUTUJA THAKUR/Django/Moviezilla/Moviezilla_project/recommend/static/recommend/credits.csv')
+movie_loc=os.getcwd()
+credits_loc=os.getcwd()
+movie=pd.read_csv(movie_loc+'/recommend/static/recommend/movies.csv')
+credits=pd.read_csv(credits_loc+'/recommend/static/recommend/credits.csv')
 
 # movie=pd.read_csv('C:/Users/sukha/Documents/Moviezilla/Moviezilla_project/recommend/static/recommend/movies.csv')
 # credits=pd.read_csv('C:/Users/sukha/Documents/Moviezilla/Moviezilla_project/recommend/static/recommend/credits.csv')
@@ -178,3 +182,12 @@ def dashb(request):
         else:
             return render(request,'recommend/dashboard.html',{'error': 'No movies found.','gen':genres})
 
+
+@login_required
+def wishlist(request):
+        form=WishlistForm(request.POST)
+        movie=form.save(commit=False)
+        movie.user=request.user
+        movie.save()
+        return redirect('userprofile')
+        

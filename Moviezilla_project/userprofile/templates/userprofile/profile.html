@@ -114,9 +114,7 @@ p{
     transform: scale(1.03);
 }
 
-.card-text{
-    text-align: center;
-}
+
 
 
 .row{
@@ -142,7 +140,7 @@ p{
 }
 
 .genre{
-    padding-left: 390px;
+    padding-left: 370px;
 }
 
 
@@ -191,35 +189,36 @@ p{
           <h2>My Wishlist</h2>  <br>
         </div>
       
-        <div class="row" style="margin-left: 50px;">
-          <div class="col-sm-4">
-            <div class="card " style="width: 15rem;background-color: #f04d30;">
-            {% load static %}
-              <img class="card-img-top" src="{% static 'userprofile/coco.jpg' %}" alt="Card image cap" height="200px">
-              <div class="card-body">
-                <p class="card-text">Coco</p>
+       
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+ 
+          {% if film_data %}
+            {% for film_recom in film_data %}
+            <div class="row" >
+            
+              <!-- <h4 style="color: #fff;"></h4> -->
+              <div class="col">
+                <div class="card" style="width: 18rem; height:32rem;background-color: black; margin-top: 5%; margin-bottom: 40px;box-shadow: 0 4px 8px 0 rgba(105,105,105, 0.2), 0 6px 20px 0 rgba(105,105,105, 0.19);">
+                  <img src=" https://image.tmdb.org/t/p/w185/{{ film_recom.poster_path }}" alt="" class="card-img-top" height="300px">
+                  <div class="card-body">
+                    <h6 style="color: #fff;">{{ film_recom.title }}</h6>
+                    <p class="card-text" style="margin-bottom: 3%;"><em>{{ film_recom.tagline }}</em></p><br>
+                    <p style="color: #fff;" class="card-text"><img src="{%static 'recommend/favourite.png' %}" alt="" height="15px" width="15px">: <span style="color: #ee5253;">{{ film_recom.vote_average }}</span></p>
+                    <p class="card-text" style="color: #fff;"><strong>Genre: </strong><span style="color: #ee5253; text-decoration: underline;">{{ film_recom.genre }}</span></p>
+                    
+                   
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="card" style="width: 15rem;background-color: #e8a215;">
-            {% load static %}
-              <img class="card-img-top" src="{% static 'userprofile/ratatouille.jpg' %}" alt="Card image cap" height="200px">
-              <div class="card-body">
-                <p class="card-text">Ratatouille</p>
               </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="card" style="width: 15rem; background-color: #20c972;">
-            {% load static %}
-              <img class="card-img-top" src="{% static 'userprofile/tgd.jpg' %}" alt="Card image cap" height="200px">
-              <div class="card-body">
-                <p class="card-text">The Good Dinosaur</p>
+              {% endfor %}
+              {% else %}
               </div>
+              <h4 style="color: #fff;">{{ error }}</h4>
+              {% endif %}
             </div>
-          </div>
-        </div>
+
+
       </div>
     </section>
 </body>

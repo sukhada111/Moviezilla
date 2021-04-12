@@ -209,7 +209,7 @@ p{
     
       <!-- <h4 style="color: #fff;"></h4> -->
       <div class="col">
-        <div class="card" style="width: 18rem; height:32rem;background-color: black; margin-top: 5%; margin-bottom: 40px;box-shadow: 0 4px 8px 0 rgba(105,105,105, 0.2), 0 6px 20px 0 rgba(105,105,105, 0.19);">
+        <div class="card" style="width: 18rem; height:35rem;background-color: black; margin-top: 5%; margin-bottom: 40px;box-shadow: 0 4px 8px 0 rgba(105,105,105, 0.2), 0 6px 20px 0 rgba(105,105,105, 0.19);">
           <img src=" https://image.tmdb.org/t/p/w185/{{ film_recom.poster_path }}" alt="" class="card-img-top" height="300px">
           <div class="card-body">
             <h6 style="color: #fff;">{{ film_recom.title }}</h6>
@@ -217,6 +217,13 @@ p{
             <p style="color: #fff;" class="card-text"><img src="{%static 'recommend/favourite.png' %}" alt="" height="15px" width="15px">: <span style="color: #ee5253;">{{ film_recom.vote_average }}</span></p>
             <p class="card-text" style="color: #fff;"><strong>Genre: </strong><span style="color: #ee5253; text-decoration: underline;">{{ film_recom.genre }}</span></p>
             
+            <a href="#" onclick="$('#OutBtn').click()" class="nav-link">Wishlist</a>
+            <form style='display: none;' method="POST" action="{% url 'wishlist' %}">
+                {% csrf_token %}
+                <input type="text" name="movie_name" value="{{ film_recom.title }}">
+                
+                <button id="OutBtn" type="submit">Wishlist</button>
+            </form>
           </div>
         </div>
       </div>

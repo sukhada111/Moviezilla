@@ -4,6 +4,7 @@ from django.shortcuts import render,redirect,get_object_or_404
 from register.models import Genre
 from django.contrib.auth.decorators import login_required
 import requests
+from .forms import WishlistForm
 
 
 import numpy as np
@@ -181,3 +182,12 @@ def dashb(request):
         else:
             return render(request,'recommend/dashboard.html',{'error': 'No movies found.','gen':genres})
 
+
+@login_required
+def wishlist(request):
+        form=WishlistForm(request.POST)
+        movie=form.save(commit=False)
+        movie.user=request.user
+        movie.save()
+        return redirect('userprofile')
+        

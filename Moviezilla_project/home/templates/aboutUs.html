@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{% block title %}
+    About Us
+{% endblock title %}
+
+{% block style %} 
+{% load static %}
+
+<style>
+    .business-header {
+    height: 550px;
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url("{% static 'home/m4.jpg' %}");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: center;
+    -o-background-size: cover;
+}
+.tagline{
+  color: #fff;
+  font-size: 350%;
+}
+.subtag{
+  color: #fff;
+  font-weight: 300;
+  /* text-transform: uppercase; */
+}
+.button-all{
+  background-color: #ee5253;
+  color: #fff;
+}
+.button-all:hover{
+  background-color: #d63031;
+  color: #fff;
+}
+
+.button-ghost:link,
+.button-ghost:visited {
+    border: 1px solid #ee5253;
+    color: #ee5253 !important;
+}
+
+.button-ghost:hover,
+.button-ghost:active {
+    border: 1px solid #d63031;
+    color: #fff !important;
+}
+.button-all,
+.button-ghost{
+  border-radius: 50px;
+  width: 150px;
+}
+
+/* HEADINGS */
+
+h1,h2,h3{
+    
+   
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+h1{
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 250%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+
+
+}
+
+h2{
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+
+}
+
+h3{
+    font-size: 110%;
+    margin-bottom: 15px;
+
+}
+
+h2:after{
+    display: block;
+    height: 2px;
+    background-color:#ee5253;
+    content: "";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+
+}
+.heading{
+  margin-top: 10%;
+}
+
+
+</style>
+
+{% endblock style %}
+
+
+{% block body %}
+<header class="business-header">
+  <div class="container">
+      <div class="row ">
+          <div class="col-lg-12  text-center">
+              <br><br><br><br><br><br>
+              <h2 class="tagline">About Us</h2>
+              <div class="subtag" >
+                  <div class="row">
+                      <div class="col"></div>
+                      <div class="col-8">
+                        <p> Moviezilla aims to help avid movie enthusiasts and provide a sense of personalisation  by recommending movies to the user that cater to her personal interests. This would spare the user the headache of having to go through millions of movies but instead be presented with a customised list through a filtering process based on the user’s watch history and preferences.
+                        </p><p>
+                         Moviezilla basically works by providing suggestions to users using either collaborative or content based filtering, subsequently allowing users to explore more. With time, it can be worked on further to ensure that customers would not be stupefied with the huge variety of choices which will further help platforms to keep up with their clientele and increase their customer base by enhancing user satisfaction.
+                         
+                          </p>
+                      </div>
+                      <div class="col"></div>
+                
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
+<section class="team">
+  <div class="container">
+    <div class="row heading" style="margin-left: 45%;">
+      <h2>Our Team</h2>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="card" style="width: 17rem; background-color: black;">
+          {% load static %}
+            <img class="card-img-top" src="{% static 'home/sukhada.jpg' %}" alt="Card image cap" height="300px">
+            <div class="card-body">
+              <p class="card-text" style="color: #ee5253;">Sukhada Virkar</p>
+            </div>
+          </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card" style="width: 17rem; background-color: black;">
+          {% load static %}
+            <img class="card-img-top" src="{% static 'home/Rhutuja.jpg' %}" alt="Card image cap" height="300px">
+            <div class="card-body">
+              <p class="card-text" style="color: #ee5253;">Rhutuja Thakur</p>
+            </div>
+          </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card" style="width: 17rem; background-color: black;">
+          {% load static %}
+            <img class="card-img-top" src="{% static 'home/Aiswarya.jpg' %}" alt="Card image cap" height="300px">
+            <div class="card-body">
+              <p class="card-text" style="color: #ee5253;">Aiswarya Suresh</p>
+            </div>
+          </div>
+      </div>
+      <div class="col-sm-3"><div class="card" style="width: 17rem; background-color: black;">
+        {% load static %}
+          <img class="card-img-top" src="{% static 'home/Shreya.jpg' %}" alt="Card image cap" height="300px">
+          <div class="card-body">
+            <p class="card-text" style="color: #ee5253;">Shreya Ughade</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+{% endblock body %}

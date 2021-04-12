@@ -117,14 +117,14 @@ footer p{
       <!-- Image and text -->
       <nav class="navbar sticky-top navbar-expand-lg navbar-custom">
         {% load static %}
-        <a class="navbar-brand" href="#"><img src="{% static 'home/logo-moviezilla.png' %}" alt="Moviezilla Logo" width="70" height="55"></a>
+        <a class="navbar-brand" href="#"><img src="{% static 'home/logo-moviezilla.png' %}" alt="Moviezilla Logo" width="80" height="55"></a>
         <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
           <div class="navbar-nav ml-auto">
-            <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-link" href="#" >Features</a>
+            <a class="nav-link active" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{% url 'aboutUs' %}" >About Us</a>
             {% if user.is_authenticated %}
             <a class="nav-link" href="{% url 'dashb' %}" >Dashboard</a>
             <a class="nav-link" href="{% url 'userprofile' %}">My Profile</a>
@@ -149,10 +149,10 @@ footer p{
   <div class="row">
       <div class="col-sm-6">
           <ul class="footer-nav">
-              <li><a href="aboutUs.php">About us</a></li>
-              <li><a href="categ.php">Get Recommendations</a></li>
-              <li><a href="signup.php">Register now</a></li>
-              <li><a href="#">Login</a></li>
+              <li><a href="{% url 'aboutUs' %}">About us</a></li>
+              <li><a href="{% url 'dashb' %}">Get Recommendations</a></li>
+              <li><a href="{% url 'signupuser' %}">Register now</a></li>
+              <li><a href="{% url 'loginuser' %}">Login</a></li>
   
 
           </ul>
@@ -161,7 +161,7 @@ footer p{
   </div>
   <div class="row">
       <p style="padding-left: 40%;">
-          Copyright &copy; 2020 Moviezilla. All rights reserved.
+          Copyright &copy; {% now 'Y' %} Moviezilla. All rights reserved.
       </p>
   </div>
 </footer>

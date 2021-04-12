@@ -128,13 +128,13 @@ p{
               <br><br><br><br><br><br>
               <h1 class="tagline">Welcome to Moviezilla!</h1>
               <div class="subtag">
-                <p> Sub Tagline </p>
+                <p style="font-size: 150%;"> We recommend, while you sit back and enjoy 🥤🍿</p>
 
               </div>
               <br>
               {% if user.is_authenticated %}
               <a class="btn button-all btn-md" href="{% url 'dashb' %}" style="margin-right: 3.5%;">Dashboard</a>
-               <a class="btn btn-outline-danger button-ghost btn-md" href="#">Know more</a>
+               <a class="btn btn-outline-danger button-ghost btn-md" href="{% url 'aboutUs' %}">Know more</a>
                {% else %}
                <a class="btn button-all btn-md" href="{% url 'signupuser' %}" style="margin-right: 3.5%;">Sign Up</a>
                <a class="btn btn-outline-danger button-ghost btn-md" href="#">Recommend</a>
@@ -144,7 +144,7 @@ p{
   </div>
 </header>
 
-<section class="features">
+<section class="features" id="features">
 <div class="container">
   
     {% if user.is_authenticated %}

@@ -135,19 +135,31 @@ def dashb(request):
 
         mov_name=request.POST['movie']
         
-        #getting recommendations from ML model by passing movie name
+        # getting recommendations from ML model by passing movie name
         movies=recommend(mov_name)
-        
+       
         if (len(movies))>0:
             
-            url = "https://api.themoviedb.org/3/movie/550?api_key=e1ce9e59e555f9ca9c979f9212093620"
-            
-
+            # url = "https://api.themoviedb.org/3/movie/550?api_key=e1ce9e59e555f9ca9c979f9212093620"
+           
+           
             film_data=[]
             for film in movies:
+                    #search query
+                    url="https://api.themoviedb.org/3/search/movie?api_key=e1ce9e59e555f9ca9c979f9212093620&query={}"
+                    #using film name to search for movie details
                     r = requests.get(url.format(film)).json()
+                  
+                    #fetching the movie id 
+                    film_id=r['results'][0]['id']
+
+                    url_det="https://api.themoviedb.org/3/movie/{}?api_key=e1ce9e59e555f9ca9c979f9212093620"
+                    
+                    #using movie id to fetch other details of that movie
+                    r = requests.get(url_det.format(film_id)).json()
+                    
                     film_recom = {
-                        'title': film,
+                        'title':r['original_title'] ,
                         'genre':r['genres'][0]['name'],
                         'overview':r['overview'],
                         'poster_path': r['poster_path'],
@@ -158,7 +170,7 @@ def dashb(request):
                         'vote_count':r['vote_count'],
                     }
                     film_data.append(film_recom)
-            print(film_data)
+            # print(film_data)
 
             return render(request,'recommend/dashboard.html',{'film_data': film_data,'gen':genres})
         else:

@@ -188,36 +188,23 @@ p{
   <div class="row heading" style="margin-left: 40%;">
     <h2>Our Top Picks</h2>  
   </div>
-
+ 
+  
   <div class="row">
+    {% for film_recom in film_data %}
     <div class="col-sm-4">
       <div class="card " style="width: 18rem;background-color: black;">
-      {% load static %}
-        <img class="card-img-top" src="{% static 'home/poster1.jpg' %}" alt="Card image cap" height="300px">
+      
+        <img class="card-img-top" src="https://image.tmdb.org/t/p/w185/{{ film_recom.poster_path }}" alt="Card image cap" height="280px">
         <div class="card-body">
-          <p class="card-text">Avengers: Endgame</p>
+          <p class="card-text">{{film_recom.title}}</p>
         </div>
       </div>
     </div>
-    <div class="col-sm-4">
-      <div class="card" style="width: 18rem;background-color: black;">
-      {% load static %}
-        <img class="card-img-top" src="{% static 'home/poster2.jpg' %}" alt="Card image cap" height="300px">
-        <div class="card-body">
-          <p class="card-text">Aladdin</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card" style="width: 18rem; background-color: black;">
-      {% load static %}
-        <img class="card-img-top" src="{% static 'home/poster3.jpg' %}" alt="Card image cap" height="300px">
-        <div class="card-body">
-          <p class="card-text">Tangled</p>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
+  
 </div>
+
 </section>
   {% endblock body %}

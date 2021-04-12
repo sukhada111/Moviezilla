@@ -10,9 +10,12 @@ import numpy as np
 import pandas as pd
 import ast
 import pickle
+import os
 
-movie=pd.read_csv('C:/Users/RHUTUJA THAKUR/Django/Moviezilla/Moviezilla_project/recommend/static/recommend/movies.csv')
-credits=pd.read_csv('C:/Users/RHUTUJA THAKUR/Django/Moviezilla/Moviezilla_project/recommend/static/recommend/credits.csv')
+movie_loc=os.getcwd()
+credits_loc=os.getcwd()
+movie=pd.read_csv(movie_loc+'/recommend/static/recommend/movies.csv')
+credits=pd.read_csv(credits_loc+'/recommend/static/recommend/credits.csv')
 
 # movie=pd.read_csv('C:/Users/sukha/Documents/Moviezilla/Moviezilla_project/recommend/static/recommend/movies.csv')
 # credits=pd.read_csv('C:/Users/sukha/Documents/Moviezilla/Moviezilla_project/recommend/static/recommend/credits.csv')

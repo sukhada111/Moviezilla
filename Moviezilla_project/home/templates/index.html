@@ -137,7 +137,7 @@ p{
                <a class="btn btn-outline-danger button-ghost btn-md" href="{% url 'aboutUs' %}">Know more</a>
                {% else %}
                <a class="btn button-all btn-md" href="{% url 'signupuser' %}" style="margin-right: 3.5%;">Sign Up</a>
-               <a class="btn btn-outline-danger button-ghost btn-md" href="#">Recommend</a>
+               <a class="btn btn-outline-danger button-ghost btn-md" href="{% url 'loginuser' %}">Recommend</a>
                {% endif %}
           </div>
       </div>
@@ -158,25 +158,26 @@ p{
   </div>
   <div class="row">
     <div class="col-sm-4">
-      <h3>Get Movies for every Genre</h3>
+      <img src="{%static 'home/clock.png' %}" alt="" height="40px" width="40px" style="margin-bottom: 5%;">
+      <h3>Quick Recommendations</h3>
                 <p>
-                    Never waste time again! We work towards saving your time and money on groceries and everyday purchases.
-
+                   Get quick recommendations based on your search without having to go through thousands of Movies.
                 </p>
     </div>
     <div class="col-sm-4">
-      <h3>Get Movies for every Genre</h3>
-                <p>
-                    Never waste time again! We work towards saving your time and money on groceries and everyday purchases.
-
-                </p>
+      <img src="{%static 'home/cinema.png' %}" alt="" height="40px" width="40px" style="margin-bottom: 5%;">
+      <h3>Movies for every Genre</h3>
+      <p>
+           Comedy? Drama? Action? or Romance? Don't worry! We've got movies for every genre.
+      </p>
     </div>
     <div class="col-sm-4">
-      <h3>Get Movies for every Genre</h3>
-                <p>
-                    Never waste time again! We work towards saving your time and money on groceries and everyday purchases.
+      <img src="{%static 'home/wish-list.png' %}" alt="" height="40px" width="40px" style="margin-bottom: 5%;">
 
-                </p>
+      <h3>Wishlist your Favourites</h3>
+            <p>
+              Want to remember a movie for later? You can wishlist and save the movies you like.
+            </p>
     </div>
 
   </div>

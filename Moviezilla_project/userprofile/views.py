@@ -14,7 +14,6 @@ def userprofile(request):
     for i in range(len(movies)):
         movv.append(movies[i].movie_name)
 
-    print(movv)
     film_data=[]
     for film in movv:
                     #search query

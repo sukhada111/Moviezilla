@@ -155,28 +155,33 @@ p{
     </div> 
     <br>
     <div class="genre">
-      {% if gen.drama %}
-        <a href="#" class="square_btn">Drama</a>
-        {% endif %}
-
-        {% if gen.thriller %}
-        <a href="#" class="square_btn">Thriller</a>
-        {% endif %}
-
-        {% if gen.action %}
-        <a href="#" class="square_btn">Action</a>
-        {% endif %}
-
-        {% if gen.comedy %}
-        <a href="#" class="square_btn">Comedy</a>
-        {% endif %}
-
-        {% if gen.adventure %}
-        <a href="#" class="square_btn">Adventure</a>
-        {% endif %}
-        {% if gen.romance %}
-        <a href="#" class="square_btn">Romance</a>
-        {% endif %}
+      <div class="container" style="margin-left: 5%;">
+        <div class="row">
+          {% if gen.drama %}
+          <a href="#" class="btn btn-danger" style="margin-right: 2%;">Drama</a>
+          {% endif %}
+  
+          {% if gen.thriller %}
+          <a href="#" class="btn btn-danger" style="margin-right: 2%;">Thriller</a>
+          {% endif %}
+  
+          {% if gen.action %}
+          <a href="#" class="btn btn-danger" style="margin-right: 2%;">Action</a>
+          {% endif %}
+  
+          {% if gen.comedy %}
+          <a href="#" class="btn btn-danger" style="margin-right: 2%;">Comedy</a>
+          {% endif %}
+  
+          {% if gen.adventure %}
+          <a href="#" class="btn btn-danger" style="margin-right: 2%;">Adventure</a>
+          {% endif %}
+          {% if gen.romance %}
+          <a href="#" class="btn btn-danger" style="margin-right: 2%;">Romance</a>
+          {% endif %}
+        </div>
+      </div>
+      
 
     </div>
 </section>

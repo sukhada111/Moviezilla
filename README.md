@@ -17,9 +17,9 @@ In this feature,  we ask the user to select their favorite genres during Signup 
 
 
 Group members:
-1814119- Sukhada Virkar
-1814128- Rhutuja Thakur
-1814116- Shreya Ughade
-1814122- Aiswarya Suresh
+1814119- Sukhada Virkar,
+1814128- Rhutuja Thakur,
+1814116- Shreya Ughade,
+1814122- Aiswarya Suresh.
 
 

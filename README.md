@@ -23,3 +23,11 @@ Group members:
 1814122- Aiswarya Suresh.
 
 
+To run this project built using Django Framework:
+
+In command prompt, enter the command:
+python manage.py runserver
+
+Then a url is shown which is : http://127.0.0.1:8000/ 
+
+On clicking this url, you will be redirected to the Home Page of Moviezilla.
